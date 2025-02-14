@@ -1,6 +1,7 @@
 package unit3;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -9,9 +10,15 @@ import java.net.URL;
 public class GetContentDemo {
     public static void main(String[] args) {
         try {
-            URI uri = new URI("https://media.gettyimages.com/id/2164334242/photo/triangular-shaped-tunnel.jpg?s=1024x1024&w=gi&k=20&c=ocfYosx04DiSgzqFo5tvGD5PCSMhaqo4ZjRfFsG2tQk=");
+            URI uri = new URI("https://www.orange.com/en");
             URL url = uri.toURL();
-            System.out.println(url.getContent().getClass());
+            InputStream in = (InputStream) url.getContent();
+            
+            int ch;
+            while ((ch = in.read()) != -1) {
+                System.out.print((char)ch);
+            }
+            // System.out.println(url.getContent().getClass());
 
         } catch(URISyntaxException exx) {
             System.out.println(exx.getMessage());
