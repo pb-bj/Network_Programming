@@ -1,0 +1,5 @@
+# Difference between URL nad URL Connection
+
+-> URL Connection provides access to HTTP header fields.
+-> We can configure request params by using URL connection.
+-> Not only GET request we can perform POST request with given periods.
